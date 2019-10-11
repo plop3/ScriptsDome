@@ -10,7 +10,7 @@ import sys
 import socket
 
 status=0
-IP="localhost"
+IP="dome"
 PORT=1234
 
 # Fermeture des portes

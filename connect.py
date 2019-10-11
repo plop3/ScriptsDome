@@ -9,7 +9,7 @@
 import sys
 import socket
 
-IP="localhost"
+IP="dome"
 PORT=1234
 
 # Lecture de l'etat du dome et mise a jour du pilote Indi

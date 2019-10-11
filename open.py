@@ -9,7 +9,7 @@
 import sys
 import  socket
 
-IP="localhost"
+IP="dome"
 PORT=1234
 status=0
 # Ouverture des portes
