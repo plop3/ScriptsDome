@@ -9,8 +9,8 @@
 import sys
 import  socket
 
-IP="espDome"
-PORT=23
+IP="localhost"
+PORT=1234
 status=0
 # Ouverture des portes
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

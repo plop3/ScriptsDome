@@ -9,8 +9,8 @@
 import sys
 import socket
 
-IP="espDome"
-PORT=23
+IP="localhost"
+PORT=1234
 
 # Lecture de l'etat du dome et mise a jour du pilote Indi
 

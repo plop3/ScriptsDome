@@ -16,8 +16,8 @@ import os
 import sys
 import socket
 
-IP="espDome"
-PORT=23
+IP="localhost"
+PORT=1234
 
 status=0
 

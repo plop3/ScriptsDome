@@ -10,8 +10,8 @@ import sys
 import socket
 
 status=0
-IP="espDome"
-PORT=23
+IP="localhost"
+PORT=1234
 
 # Fermeture des portes
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
