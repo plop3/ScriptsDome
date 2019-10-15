@@ -8,6 +8,7 @@
 
 import sys
 import socket
+import time
 
 IP="dome"
 PORT=1234
@@ -22,8 +23,11 @@ if rep=='1':
     retP='1'
 else:
     retP='0'
-s.send(b"D?#")
-rep=s.recv(1024).decode()[0]
+s.close()
+s2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s2.connect((IP,PORT))
+s2.send(b"D?#")
+rep=s2.recv(1024).decode()[0]
 if rep=='1':
     retD='0'
 else:
