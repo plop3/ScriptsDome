@@ -17,7 +17,7 @@ import sys
 import socket
 
 IP="dome"
-PORT=1234
+PORT=23
 
 status=0
 

@@ -11,7 +11,7 @@ import socket
 import time
 
 IP="dome"
-PORT=1234
+PORT=23
 
 # Lecture de l'etat du dome et mise a jour du pilote Indi
 

@@ -11,7 +11,7 @@ import socket
 
 status=0
 IP="dome"
-PORT=1234
+PORT=23
 
 # Fermeture des portes
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
