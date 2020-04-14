@@ -13,6 +13,8 @@ import time
 IP="dome"
 PORT=23
 
+script, path = sys.argv
+
 # Lecture de l'etat du dome et mise a jour du pilote Indi
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -39,5 +41,10 @@ coordinates = open('/tmp/indi-status', 'w')
 coordinates.truncate()
 coordinates.write(retD+' '+retP+' 0')
 coordinates.close()
+
+status = open(path, 'w')
+status.truncate()
+status.write(retD+' '+retP+' 0')
+status.close()
 
 sys.exit(0)
