@@ -7,14 +7,18 @@
 #
 
 import sys
+import requests
 
 script, path = sys.argv
 
-coordinates = open('/tmp/indi-status', 'r')
 status = open(path, 'w')
 status.truncate()
-status.write(coordinates.readline())
+try:
+    r = requests.get("http://192.168.0.17/state")
+    status.write(r.content.decode("utf-8"))
+except:
+    coordinates = open('/tmp/indi-status', 'r')
+    status.write(coordinates.readline())
 status.close()
-
 sys.exit(0)
 
