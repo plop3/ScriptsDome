@@ -1,0 +1,2 @@
+#!/bin/bash
+/usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "abri-in" -m "a"

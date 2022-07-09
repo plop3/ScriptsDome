@@ -1,0 +1,8 @@
+#!/bin/bash
+# Active le 19V télescope
+/usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "abri-in" -m "T"
+# Ouvre l'abri
+/usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "abri-in" -m "A"
+# Eteint les éclairages
+/usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "abri-in" -m "l"
+# Coupe l'éclairage IR

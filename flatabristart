@@ -1,0 +1,13 @@
+#!/bin/bash
+# Parque le dome
+/usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "abri-in" -m "a"
+# Allume le panneau à flats
+/usr/bin/indi_setprop -h astro.local "SnapCap.FLAT_LIGHT_INTENSITY.FLAT_LIGHT_INTENSITY_VALUE=250"
+/usr/bin/indi_setprop -h astro.local "SnapCap.FLAT_LIGHT_CONTROL.FLAT_LIGHT_ON=On"
+# Attend que le dome soit parqué
+REP="ON"
+while [ $REP = "ON" ]
+do
+	REP=$(/usr/bin/mosquitto_sub -h 192.168.0.4 -u domo -P dom456 -C 1 -t "abri-out/open")
+done
+# OK, FIN
