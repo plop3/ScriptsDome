@@ -5,5 +5,8 @@
 /usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "abri-in" -m "a"
 # Coupure du panneau à flats
 /usr/share/indi/scripts/flatstop
+# Arret du chauffage de la caméra
+
 # Allumage de la caméra de surveillance
+/usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "astrofinsceance" -m "f"
 
