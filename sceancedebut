@@ -1,10 +1,15 @@
 #!/bin/bash
 # Active le 19V télescope
-/usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "abri-in" -m "T"
+#/usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "abri-in" -m "T"
+/usr/bin/indi_setprop "RollOff ino.AUX.AUX_ENABLE=On"
+
 # Ouvre l'abri
-/usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "abri-in" -m "A"
+/usr/bin/indi_setprop "RollOff ino.DOME_PARK.UNPARK=On"
+##/usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "abri-in" -m "A"
+
 # Eteint les éclairages
 /usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "abri-in" -m "l"
+
 # Coupe l'éclairage IR et cloture
 /usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "astrodebutsceance" -m "d"
 

@@ -1,0 +1,4 @@
+#!/bin/bash
+# Ouverture de l'abri
+/usr/bin/indi_setprop "RollOff ino.DOME_PARK.UNPARK=On"
+

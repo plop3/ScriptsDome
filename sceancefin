@@ -1,11 +1,15 @@
 #!/bin/bash
 # Coupure de l'alimentation télescope/caméras
-/usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "abri-in" -m "t"
+#/usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "abri-in" -m "t"
+/usr/bin/indi_setprop "RollOff ino.AUX.AUX_DISABLE=On"
+
 # Fermeture de l'abri
-/usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "abri-in" -m "a"
+#/usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "abri-in" -m "a"
+/usr/bin/indi_setprop "RollOff ino.DOME_PARK.PARK=On"
+
 # Coupure du panneau à flats
 /usr/share/indi/scripts/flatstop
-# Arret du chauffage de la caméra
+# TODO Arret du chauffage de la caméra
 
 # Allumage de la caméra de surveillance
 /usr/bin/mosquitto_pub -h 192.168.0.4 -u domo -P dom456 -t "astrofinsceance" -m "f"
